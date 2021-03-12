@@ -106,7 +106,17 @@ LCD_Enable:	    ; pulse enable bit LCD_E for 500ns
 	nop
 	nop
 	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 	bsf	LATH, LCD_E, A	    ; Take enable high
+	nop
+	nop
+	nop
+	nop
+	nop
 	nop
 	nop
 	nop

@@ -68,9 +68,17 @@ loop: 	tblrd*+			; one byte from PM to TABLAT, increment TBLPRT
 	
 	
 	call    delay3
-	movlw	0x20
+	movlw	0x1F
 	movwf	0x20
 	call	move_cursor
+	
+	movlw   0xFF
+	movwf   delay_count
+	movlw   0xFF
+	movwf   second_delay_count
+	movlw   0xAA
+	movwf   third_delay_count ; triple nested delay
+	call    delay3
 	
 	movlw	myTable_l	; output message to LCD
 	addlw	0xff		; don't send the final carriage return to LCD
